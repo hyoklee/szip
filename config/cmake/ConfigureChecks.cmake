@@ -53,6 +53,7 @@ endmacro ()
 # ----------------------------------------------------------------------
 # WINDOWS Hard code Values
 # ----------------------------------------------------------------------
+
 set (WINDOWS)
 
 if (MINGW)
@@ -137,7 +138,7 @@ CHECK_INCLUDE_FILE_CONCAT ("inttypes.h"      HAVE_INTTYPES_H)
 #-----------------------------------------------------------------------------
 #  Check for the math library "m"
 #-----------------------------------------------------------------------------
-if (MINGW OR NOT WINDOWS)
+if (NOT WINDOWS)
   CHECK_LIBRARY_EXISTS_CONCAT ("m" ceil     HAVE_LIBM)
   CHECK_LIBRARY_EXISTS_CONCAT ("ws2_32" WSAStartup  HAVE_LIBWS2_32)
   CHECK_LIBRARY_EXISTS_CONCAT ("wsock32" gethostbyname HAVE_LIBWSOCK32)
@@ -214,7 +215,7 @@ set (LINUX_LFS 0)
 
 set (SZIP_EXTRA_C_FLAGS)
 set (SZIP_EXTRA_FLAGS)
-if (MINGW OR NOT WINDOWS)
+if (NOT WINDOWS)
   if (SZIP_HAVE_SOLARIS OR SZIP_HAVE_DARWIN)
   # Linux Specific flags
   set (SZIP_EXTRA_FLAGS -D_POSIX_C_SOURCE -D_DEFAULT_SOURCE)
