@@ -16,7 +16,7 @@ set (SZIP_PUBLIC_HEADERS
     ${SZIP_SRC_SOURCE_DIR}/szlib.h
 )
 
-# add_library (${SZIP_LIB_TARGET} STATIC ${SZIP_SRCS} ${SZIP_PUBLIC_HEADERS})
+add_library (${SZIP_LIB_TARGET} STATIC ${SZIP_SRCS} ${SZIP_PUBLIC_HEADERS})
 #set_target_properties (${SZIP_LIB_TARGET}
 #  PROPERTIES
 #      LINK_FLAGS "-version-info 2:0:0"
